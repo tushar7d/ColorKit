@@ -1,0 +1,7 @@
+{
+  "name": "Color Kit",
+  "id": "797696673804519719",
+  "api": "1.0.0",
+  "main": "dist/code.js",
+  "ui": "dist/ui.html"
+}
