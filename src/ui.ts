@@ -2,8 +2,6 @@ import './bulma.min.css'
 import Color from 'color'
 
 
-
-
 document.getElementById('create').onclick = () => {
   
   const textbox = document.getElementById('count') as HTMLInputElement
