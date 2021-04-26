@@ -4,7 +4,7 @@ figma.showUI(__html__, { width: 350, height: 400 })
 figma.ui.onmessage = msg => {
 
   if (msg.type === 'darken') {
-
+    console.log(msg)
       const r = msg.color.r / 255
       const g = msg.color.g / 255
       const b = msg.color.b / 255
