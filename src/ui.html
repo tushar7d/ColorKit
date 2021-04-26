@@ -1,12 +1,12 @@
 <style>
-
 	#tabs {
 
 		display: flex;
 		list-style-type: none;
 		margin: 0;
-	
+
 	}
+
 	a {
 		text-emphasis: none;
 		text-decoration: none;
@@ -15,47 +15,47 @@
 		margin: 0;
 
 	}
+
 	ul[role="tablist"] {
 		margin: 0px;
 		padding: 0px;
 	}
-	a[aria-selected="true"]{
+
+	a[aria-selected="true"] {
 
 		color: inherit;
 	}
-
 </style>
-<ul  id="tabs" data-tabs>
+<ul id="tabs" data-tabs>
 	<li class="section-title"><a data-tabby-default href="#darken">Dark Shades</a></li>
 	<li class="section-title"><a href="#lighten">Light Shades</a></li>
-	
+
 </ul>
 
 <div id="darken">
-	
-<div class="label">Enter Base Color (#color-code)</div>
 
-<input type="input" class="input" value="#0054A3" id="color" >
-<div class="label">Number of shades required</div>
-<input  type="input" class="input" value="5" id="count" >
-<div class="label">Darken by (0.1~0.9)</div>
-<input type="input" class="input" value="0.1" id="ratio" >
-<br>
-<button class='button button--primary' id="create">Generate</button>
-<button class='button button--secondary' id="cancel">Cancel</button>
+	<div class="label">Enter Base Color (#color-code)</div>
+
+	<input type="input" class="input" value="#0054A3" id="color">
+	<div class="label">Number of shades required</div>
+	<input type="input" class="input" value="5" id="count">
+	<div class="label">Darken by (0.1~0.9)</div>
+	<input type="input" class="input" value="0.1" id="ratio">
+	<br>
+	<button class='button button--primary' id="create">Generate</button>
+	<button class='button button--secondary' id="cancel">Cancel</button>
 
 </div>
 <div id="lighten">
 	<div class="label">Enter Base Color (#color-code)</div>
 
-<input type="input" class="input" value="#0054A3" id="colorl" >
-<div class="label">Number of shades required</div>
-<input  type="input" class="input" value="5" id="countl" >
-<div class="label">Lighten by (0.1~0.9)</div>
-<input type="input" class="input" value="0.1" id="ratiol" >
-<br>
-<button class='button button--primary' id="createl">Generate</button>
-<button class='button button--secondary' id="cancell">Cancel</button>
+	<input type="input" class="input" value="#0054A3" id="colorl">
+	<div class="label">Number of shades required</div>
+	<input type="input" class="input" value="5" id="countl">
+	<div class="label">Lighten by (0.1~0.9)</div>
+	<input type="input" class="input" value="0.1" id="ratiol">
+	<br>
+	<button class='button button--primary' id="createl">Generate</button>
+	<button class='button button--secondary' id="cancell">Cancel</button>
 
 </div>
-
