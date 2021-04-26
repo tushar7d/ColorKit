@@ -1,10 +1,7 @@
-import './figma-plugin-ds.min.css'
-import './figma-plugin-ds.min.js'
-import Tabby from 'tabbyjs'
+import './bulma.min.css'
 import Color from 'color'
 
-let tabs = new Tabby('[data-tabs]');
-tabs.setup();
+
 document.getElementById('create').onclick = () => {
   
   const textbox = document.getElementById('count') as HTMLInputElement
