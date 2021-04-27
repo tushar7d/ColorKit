@@ -2,7 +2,7 @@ import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import { useForm } from "react-hook-form";
 import { useState } from 'react'
-import { SliderPicker } from 'react-color';
+
 import Color from 'color'
 import './bulma.min.css'
 
@@ -10,7 +10,7 @@ import './bulma.min.css'
 let App = () => {
 
 
-  const { register, handleSubmit } = useForm();
+  const { register,formState: { errors }, handleSubmit } = useForm();
   const onSubmit = data => generate(data);
   const [tab, Toggle] = useState(true);
 
@@ -27,11 +27,7 @@ let App = () => {
     const ratio = parseFloat(textboxRatio);
     parent.postMessage({ pluginMessage: { type: 'darken', count, color, ratio } }, '*')
   }
-  let handleChange = (color, e) => {
-
-    console.log(color)
-   
-  }
+  
 
 
   return <div >
@@ -41,20 +37,21 @@ let App = () => {
         <li className={tab ? "tab" : "tab is-active"} onClick={() => Toggle(!tab)}><a>Light Shades</a></li>
       </ul>
     </div>
-    <SliderPicker onChange ={handleChange} />
+    
+
     {tab ? <form onSubmit={handleSubmit(onSubmit)}>
       <div className="field">
         <div className="label">Enter Base Color (#color-code)</div>
         
-        <input type="input " className="input" defaultValue="#0054A3"  {...register("color")} id="color" />
+        <input type="input" className="input" defaultValue="#0054A3" {...register("color")} id="color" />
       </div>
       <div className="field">
         <div className="label">Number of shades required</div>
-        <input type="input " className="input" defaultValue="5"  {...register("count")} id="count" />
+        <input type="input" className={errors.count?"input is-active":"input "} defaultValue="5" {...register("count", { required: true })} id="count" />
       </div>
       <div className="field">
         <div className="label">Darken by (0.1~0.9)</div>
-        <input type="input" className="input" defaultValue="0.1"  {...register("ratio")} id="ratio" />
+        <input type="input" className="input" defaultValue="0.1" {...register("ratio")} id="ratio" />
       </div>
 
 
