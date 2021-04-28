@@ -25,6 +25,7 @@ let App = () => {
 
   // send data to cod.ts
   let generate = (data) => {
+    
     console.log(data)
     const count = data.count
     const color = Color(data.color).rgb().object()
@@ -56,13 +57,13 @@ let App = () => {
 
       <div className=" m-2" >
 
-        {(errors.color || errors.count || errors.ratio) ? <article className="message is-danger is-small"><div className="message-body is-small">Error</div></article> : null }
-
+        {(errors.color || errors.count || errors.ratio) ? <article className="message is-danger is-small"><div className="message-body is-small">Error </div></article> : null }
+        
         {tab ? <form onSubmit={handleSubmit(onSubmit)}>
           <div className="field">
             <div className="label">Enter Base Color (#color-code)</div>
 
-            <input type="input" className={errors.color ? "input is-danger" : "input "} defaultValue="#0054A3" {...register("color", { required: true })} id="color" />
+            <input type="input" className={errors.color ? "input is-danger" : "input "} defaultValue="#0054A3" {...register("color", { required: true } )} id="color" />
           </div>
           <div className="field">
             <div className="label">Number of shades required</div>
