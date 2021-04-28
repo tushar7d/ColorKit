@@ -14,6 +14,11 @@
   "resolved" "https://registry.npmjs.org/@emotion/hash/-/hash-0.8.0.tgz"
   "version" "0.8.0"
 
+"@figma/plugin-typings@^1.22.0":
+  "integrity" "sha512-0Bp6lkXkgpNVGrL3LcL7tWLHahD3m5mQifYcXcHt0LzFimyWgGQAM/4csrkhdYhvfjF5KCRQNf7bSjxS60izEg=="
+  "resolved" "https://registry.npmjs.org/@figma/plugin-typings/-/plugin-typings-1.22.0.tgz"
+  "version" "1.22.0"
+
 "@icons/material@^0.2.4":
   "integrity" "sha512-QPcGmICAPbGLGb6F/yNf/KzKqvFx8z5qx3D1yFqVAjoFmXK35EgyW+cJ57Te3CNsmzblwtzakLGFqHPqrfb4Tw=="
   "resolved" "https://registry.npmjs.org/@icons/material/-/material-0.2.4.tgz"

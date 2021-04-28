@@ -10,6 +10,7 @@ figma.ui.onmessage = msg => {
       const b = msg.color.b / 255
       let color = { r: r, g: g, b: b }
       const cent = figma.viewport.center.x 
+      let nodes
       for (let i = 0; i < msg.count; i++) {
 
         const cl = (i == 0 ? color : darkenClr(color, msg.ratio))
@@ -18,10 +19,10 @@ figma.ui.onmessage = msg => {
         rect.fills = [{ type: 'SOLID', color: cl }]
         figma.currentPage.appendChild(rect)
         color = cl;
-
+        
        
-
       }
+      
 
       figma.closePlugin()
 
@@ -44,6 +45,7 @@ const cent = figma.viewport.center.x
       color = cl;
 
     }
+    
 
     figma.closePlugin()
 
