@@ -15,6 +15,7 @@ let App = () => {
 
   // on submit
   const onSubmit = data => generate(data);
+  const onSubmitl = data => generatel(data);
 
   // on close
   let close = () => {
@@ -31,6 +32,14 @@ let App = () => {
     const ratio = parseFloat(textboxRatio);
     parent.postMessage({ pluginMessage: { type: 'darken', count, color, ratio } }, '*')
   }
+  let generatel = (data) => {
+    console.log(data)
+    const count = data.count
+    const color = Color(data.color).rgb().object()
+    const textboxRatio = data.ratio
+    const ratio = parseFloat(textboxRatio);
+    parent.postMessage({ pluginMessage: { type: 'lighten', count, color, ratio } }, '*')
+  }
 
 
   //Presentation layer
@@ -45,7 +54,7 @@ let App = () => {
       </div>
 
 
-      <div className=" m-1" >
+      <div className=" m-2" >
 
         {(errors.color || errors.count || errors.ratio) ? <article className="message is-danger is-small"><div className="message-body is-small">Error</div></article> : null }
 
@@ -76,31 +85,33 @@ let App = () => {
           </div>
         </form> : null}
 
-        
-        {!tab ? <div >
+
+        {!tab ? <form onSubmit={handleSubmit(onSubmitl)}>
           <div className="field">
             <div className="label">Enter Base Color (#color-code)</div>
-            <input type="input " className="input " value="#0054A3" id="colorl" />
+
+            <input type="input" className={errors.color ? "input is-danger" : "input "} defaultValue="#0054A3" {...register("color", { required: true })} id="color" />
           </div>
           <div className="field">
             <div className="label">Number of shades required</div>
-            <input type="input " className="input " value="5" id="countl" />
+            <input type="input" className={errors.count ? "input is-danger" : "input "} defaultValue="5" {...register("count", { required: true })} id="count" />
           </div>
           <div className="field">
             <div className="label">Lighten by (0.1~0.9)</div>
-            <input type="input" className="input  " value="0.1" id="ratiol" />
+            <input type="input" className={errors.ratio ? "input is-danger" : "input "} defaultValue="0.1" {...register("ratio", { required: true })} id="ratio" />
           </div>
 
 
           <div className="field is-grouped">
+
             <div className="control">
-              <button className="button is-link" id="createl">Generate</button>
+              <input type="submit" className="button is-link" id="create" />
             </div>
             <div className="control">
-              <button className="button is-link is-light" id="cancell">Cancel</button>
+              <button className="button is-link is-light" onClick={close} id="cancel">Cancel</button>
             </div>
           </div>
-        </div> : null}
+        </form> : null}
       </div>
 
     </div>)
