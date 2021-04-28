@@ -1,5 +1,5 @@
 import { darkenClr, lightenClr } from './util.js'
-figma.showUI(__html__, { width: 350, height: 450 })
+figma.showUI(__html__, { width: 350, height: 600 })
 
 figma.ui.onmessage = msg => {
 
