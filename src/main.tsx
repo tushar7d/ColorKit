@@ -86,7 +86,7 @@ let App = () => {
               <input type="submit" className="button is-link" id="create" />
             </div>
             <div className="control">
-              <button className="button is-link is-light" onClick={close} id="cancel">Cancel</button>
+              <button type="button" className="button is-link is-light" onClick={close} id="cancel">Cancel</button>
             </div>
           </div>
         </form> : null}
@@ -105,7 +105,7 @@ let App = () => {
               <input type="submit" className="button is-link" id="create" />
             </div>
             <div className="control">
-              <button className="button is-link is-light" onClick={close} id="cancel">Cancel</button>
+              <button type="button" className="button is-link is-light" onClick={close} id="cancel">Cancel</button>
             </div>
           </div>
         </form> : null}
