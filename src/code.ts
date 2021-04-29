@@ -4,12 +4,13 @@ figma.showUI(__html__, { width: 350, height: 600 })
 figma.ui.onmessage = msg => {
 
   if (msg.type === 'darken') {
-    console.log(msg)
+    
       const r = msg.color.r / 255
       const g = msg.color.g / 255
       const b = msg.color.b / 255
       let color = { r: r, g: g, b: b }
       const cent = figma.viewport.center.x 
+      
       for (let i = 0; i < msg.count; i++) {
 
         const cl = (i == 0 ? color : darkenClr(color, msg.ratio))
@@ -18,10 +19,13 @@ figma.ui.onmessage = msg => {
         rect.fills = [{ type: 'SOLID', color: cl }]
         figma.currentPage.appendChild(rect)
         color = cl;
-
+        if(msg.count - 1 == i){
+          
+         figma.viewport.scrollAndZoomIntoView([rect])
+        }
        
-
       }
+      
 
       figma.closePlugin()
 
@@ -42,8 +46,13 @@ const cent = figma.viewport.center.x
       rect.fills = [{ type: 'SOLID', color: cl }]
       figma.currentPage.appendChild(rect)
       color = cl;
+      if(msg.count - 1 == i){
+          
+        figma.viewport.scrollAndZoomIntoView([rect])
+       }
 
     }
+    
 
     figma.closePlugin()
 
