@@ -25,7 +25,7 @@ let App = () => {
     parent.postMessage({ pluginMessage: { type: 'cancel' } }, '*')
   }
 
-  const [colorx, setColor] = useState("#3098FF");
+  const [colorx, setColor] = useState("#00458a");
 
   // send data to cod.ts
   let generate = (data) => {

@@ -30,11 +30,13 @@ figma.ui.onmessage = (msg) => {
     let color = { r: r, g: g, b: b };
     
     
-    const cent = figma.viewport.center.x;
+      console.log(color)
+      const cent = figma.viewport.center.x;
     for (let i = 0; i < msg.count; i++) {
       const cl = i == 0 ? color : lightenClr(color, msg.ratio);
+      
       const rect = figma.createRectangle();
-
+      
       rect.x = i * 100 + cent;
       rect.fills = [{ type: "SOLID", color: cl }];
       figma.currentPage.appendChild(rect);
@@ -43,8 +45,11 @@ figma.ui.onmessage = (msg) => {
         figma.viewport.scrollAndZoomIntoView([rect]);
       }
     }
-
+    
+    
     figma.closePlugin();
+
+    
   }
 
   if (msg.type === "cancel") {

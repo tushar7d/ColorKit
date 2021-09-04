@@ -1,11 +1,20 @@
 import Color from 'color'
  
   export const darkenClr = (fill,val) =>{
-    return Color(fill).darken(val).rgb().object()
+    return Color(fill,"rgb").darken(val).rgb().object()
   }
   
   export const lightenClr = (fill,val) =>{
-    return Color(fill).lighten(val).rgb().object()
+
+    let out = Color(fill,"rgb").lighten(val).rgb().object()
+
+    if(out.b>1){
+
+      return {r: out.r, g:out.g, b:1}
+    }
+    
+    else
+    return out
   }
 
   
