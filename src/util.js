@@ -8,13 +8,10 @@ import Color from 'color'
 
     let out = Color(fill,"rgb").lighten(val).rgb().object()
 
-    if(out.b>1){
-
-      return {r: out.r, g:out.g, b:1}
-    }
     
-    else
-    return out
+    
+    
+    return {r: out.r >1? 1 : out.r, g: out.g >1? 1 : out.g, b: out.b >1? 1 : out.b,}
   }
 
   
